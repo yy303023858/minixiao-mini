@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view scroll-y="true" bindscroll="viewScroll" class="scroll_view">
+    <!-- header -->
+    <view class="header {{changeHeader ? 'blueHeader' : ''}}">
+      <view class="header_box" bindtap="search">
+        <icon type="search" color="#fff" size="14" class="icon_img" />
+        <text class="header_title">搜索职位或公司</text>
+      </view>
+    </view>
+    <!-- swiper -->
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500" class="swiper" indicator-active-color="#049cff" circular="true">
+      <block wx:for="{{swiperList}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.img}}" class="slide-image img" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- nav -->
+    <view class="nav_wrapper">
+      <view class="nav_item" bindtap="goJobs">
+        <image src="/asset/iconfont/nav-job.png" class="nav_img"></image>
+        <text class="nav_name">职位</text>
+      </view>
+      <view class="nav_item">
+        <image src="/asset/iconfont/nav-company.png" class="nav_img"></image>
+        <text class="nav_name">公司</text>
+      </view>
+      <view class="nav_item">
+        <image src="/asset/iconfont/nav-speech.png" class="nav_img"></image>
+        <text class="nav_name">宣讲会</text>
+      </view>
+    </view>
+    <!-- 热门职位 -->
+    <view class="hot_job">
+      <image src="/asset/iconfont/fire.png" class="hot_img"></image>
+      <text class="hot_text">热门职位</text>
+    </view>
+    <view class="gird_view">
+      <view class="gird_item" wx:for="{{jobList}}" wx:key="index" bindtap="goDetail" id="{{item.jobId}}">
+        <view class="img_wrapper">
+          <image class="gird_img" src="{{item.logo}}" mode="aspectFit"></image>
+        </view>
+        <text class="info_job">{{item.jobName}}</text>
+        <text class="salary">{{item.salary}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

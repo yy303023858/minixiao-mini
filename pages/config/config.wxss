@@ -1,0 +1,35 @@
+/* config.wxss */
+
+.user_option {
+  background-color: #fff;
+}
+
+.option_wrapper {
+  display: flex;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.option_item {
+  font-size: 32rpx;
+}
+
+.icon_right {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.login_btn_box {
+  padding: 100rpx 30rpx 0;
+}
+
+.login_btn {
+  display: block;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background-color: red;
+}

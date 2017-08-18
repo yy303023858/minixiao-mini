@@ -1,0 +1,27 @@
+/* privacy.wxss */
+
+.privacy_title {
+  display: block;
+  margin: 20rpx 0 10rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.radio-group{
+  border-top: 1rpx solid #d9d9d9;
+}
+.radio_item {
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.radio {
+  display: block;
+  width: 100%;
+}
+
+.radio_icon {
+  float: right;
+}

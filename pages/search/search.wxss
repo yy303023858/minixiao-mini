@@ -1,0 +1,88 @@
+/* search.wxss */
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #eee;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 92rpx;
+  text-align: center;
+  background-color: #049cff;
+}
+
+.header_box {
+  display: inline-block;
+  width: 75%;
+  height: 64rpx;
+  margin-top: 14rpx;
+  border-radius: 32rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header_title {
+  display: inline-block;
+  vertical-align: middle;
+  width: 210rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.icon_img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.search_btn {
+  position: absolute;
+  right: 20rpx;
+  top: 28rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.history_wrapper {
+  padding-top: 46px;
+}
+
+.history_item {
+  display: flex;
+  margin-bottom: 6px;
+  padding: 0 15px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #464646;
+}
+
+.history_text {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+.icon_close {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.clear_btn {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px;
+  color: #049cff;
+  background-color: #fff;
+}

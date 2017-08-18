@@ -1,0 +1,45 @@
+/* channel.wxss */
+.scroll_view{
+  height: 1110rpx;
+}
+.channel_view {
+  padding: 20rpx 20rpx 0;
+}
+
+.card {
+  margin-bottom: 40rpx;
+  border-radius: 20rpx;
+  border: 1rpx solid #eee;
+  box-shadow: 0 8rpx 12rpx #eee;
+  overflow: hidden;
+}
+
+.img_wrapper {
+  min-height: 300rpx;
+}
+
+.img {
+  display: block;
+  width: 100%;
+}
+
+.card_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 24rpx;
+  color: #000;
+  background-color: #fff;
+}
+
+.card_text {
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.icon_right {
+  width: 32rpx;
+  height: 32rpx;
+}

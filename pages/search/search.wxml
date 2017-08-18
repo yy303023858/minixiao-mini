@@ -1,0 +1,19 @@
+<!--search.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="header_box">
+      <icon type="search" color="#fff" size="14" class="icon_img" />
+      <input class="header_title" value="{{searchContent}}" bindblur="searchBlur" placeholder="搜索职位或公司" auto-focus placeholder-style="color: #fff"/>
+    </view>
+    <text class="search_btn" bindtap="search">搜索</text>
+  </view>
+
+  <view class="history_wrapper">
+    <view class="history_item" wx:for="{{historyList}}" wx:key="{{index}}">
+      <text class="history_text">{{item}}</text>
+      <image class="icon_close" src="/asset/iconfont/close.png" bindtap="deleteItem" id="{{index}}"></image>
+    </view>
+  </view>
+
+  <text class="clear_btn" bindtap="clearAll" wx:if="{{historyList.length}}">清空全部历史记录</text>
+</view>

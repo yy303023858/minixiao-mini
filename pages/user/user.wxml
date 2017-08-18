@@ -1,0 +1,58 @@
+<!--user.wxml-->
+<view class="container">
+  <view class="user_bg">
+    <view class="img_wrapper">
+      <image class="img" mode="aspectFit" src="http://img2.gao7.com/files/appleimage/7AC/7AC60546-B6F3-486C-AE3B-7BFD5B32D6C0.jpg"></image>
+    </view>
+    <navigator url="/pages/login/login">
+      <text class="user_name">登录/注册</text>
+    </navigator>
+  </view>
+  <!-- applylog -->
+  <view class="user_info">
+    <view class="user_info_item" bindtap="goApplylog" id="0">
+      <view class="item_count">0</view>
+      <text class="item_title">待投递</text>
+    </view>
+    <view class="user_info_item" bindtap="goApplylog" id="1">
+      <view class="item_count">0</view>
+      <text class="item_title">处理中</text>
+    </view>
+    <view class="user_info_item" bindtap="goApplylog" id="2">
+      <view class="item_count">0</view>
+      <text class="item_title">offer</text>
+    </view>
+    <view class="user_info_item" bindtap="goApplylog" id="3">
+      <view class="item_count">0</view>
+      <text class="item_title">不合适</text>
+    </view>
+  </view>
+
+  <!-- option -->
+  <view class="user_option">
+    <navigator class="option_wrapper" url="/pages/applylog/applylog">
+      <text class="option_item">我的申请</text>
+      <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+    </navigator>
+    <navigator class="option_wrapper" url="/pages/collection/collection">
+      <text class="option_item">我的收藏</text>
+      <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+    </navigator>
+    <navigator class="option_wrapper" url="/pages/profile/profile">
+      <text class="option_item">我的简历</text>
+      <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+    </navigator>
+    <navigator class="option_wrapper" url="/pages/intention/intention">
+      <text class="option_item">求职意向</text>
+      <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+    </navigator>
+    <navigator class="option_wrapper" url="/pages/attachment/attachment">
+      <text class="option_item">附件简历</text>
+      <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+    </navigator>
+    <navigator class="option_wrapper" url="/pages/config/config">
+      <text class="option_item">设置</text>
+      <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+    </navigator>
+  </view>
+</view>

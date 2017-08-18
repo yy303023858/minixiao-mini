@@ -1,0 +1,17 @@
+<!--collection.wxml-->
+<!--applylog.wxml-->
+<view class="container">
+  <view class="job_wrapper" wx:for="{{list}}" wx:key="index">
+    <view class="job_box">
+      <view class="logo">
+        <image class="logo_img" src="{{item.logo}}"></image>
+      </view>
+      <view class="info">
+        <text class="info_job">{{item.name}}</text>
+        <text class="info_job">{{item.company}}</text>
+        <text class="info_job">{{item.salary}}</text>
+      </view>
+      <text class="state">取消收藏</text>
+    </view>
+  </view>
+</view>

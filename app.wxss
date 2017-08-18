@@ -1,0 +1,6 @@
+/**app.wxss**/
+@import "/wxParse/wxParse.wxss";
+
+.container {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}

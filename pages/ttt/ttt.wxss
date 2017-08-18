@@ -1,0 +1,14 @@
+.animateBox{
+  width: 100px;
+  height: 100px;
+  background-color: yellowgreen;
+  animation: circle 5s infinite;
+}
+@keyframes circle {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(500px);
+  }
+}

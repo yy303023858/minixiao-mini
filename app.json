@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/jobs/jobs",
+    "pages/channel/channel",
+    "pages/user/user",
+    "pages/job-detail/job-detail",
+    "pages/channel-detail/channel-detail",
+    "pages/applylog/applylog",
+    "pages/login/login",
+    "pages/intention/intention",
+    "pages/selcity/selcity",
+    "pages/ttt/ttt",
+    "pages/attachment/attachment",
+    "pages/config/config",
+    "pages/changepwd/changepwd",
+    "pages/privacy/privacy",
+    "pages/feedback/feedback",
+    "pages/sign-up/sign-up",
+    "pages/collection/collection",
+    "pages/profile/profile",
+    "pages/company-detail/company-detail",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#049cff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#F7F7FA",
+    "selectedColor": "#049cff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "asset/iconfont/home.png",
+        "selectedIconPath": "asset/iconfont/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/jobs/jobs",
+        "iconPath": "asset/iconfont/jobs.png",
+        "selectedIconPath": "asset/iconfont/jobs-active.png",
+        "text": "职位"
+      },
+      {
+        "pagePath": "pages/channel/channel",
+        "iconPath": "asset/iconfont/channel.png",
+        "selectedIconPath": "asset/iconfont/channel-active.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "asset/iconfont/user.png",
+        "selectedIconPath": "asset/iconfont/user-active.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

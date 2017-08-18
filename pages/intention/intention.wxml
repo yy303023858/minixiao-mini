@@ -1,0 +1,29 @@
+<!--intention.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="intention_item">
+      <text class="intention_text">期望职位</text>
+      <input class="intention_input" placeholder="请输入期望职位" name="jobName" placeholder-style="color: #b5b5b5" />
+    </view>
+    <view class="intention_item">
+      <text class="intention_text">期望城市</text>
+      <input class="intention_input" placeholder="请输入期望城市" value="{{city}}" bindfocus="cityfocus" name="jobName" placeholder-style="color: #b5b5b5" />
+    </view>
+    <view class="intention_item">
+      <text class="intention_text">期望月薪</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker picker_holder" wx:if="{{!salary}}">
+          例：50k以上
+        </view>
+        <view class="picker">
+          {{salary}}
+        </view>
+      </picker>
+    </view>
+  </form>
+
+  <view class="login_btn_box">
+    <button class="login_btn" formType="submit">保存</button>
+  </view>
+
+</view>

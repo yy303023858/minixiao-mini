@@ -1,0 +1,18 @@
+<!--changepwd.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="intention_item">
+      <text class="intention_text">登录账号</text>
+      <input class="intention_input" name="username" value="{{username}}" placeholder-style="color: #b5b5b5" disabled/>
+    </view>
+    <view class="intention_item">
+      <text class="intention_text">新密码</text>
+      <input class="intention_input" placeholder="请输入新密码" value="{{pwd}}" name="pwd" />
+    </view>
+  </form>
+
+  <view class="login_btn_box">
+    <button class="login_btn" formType="submit">保存</button>
+  </view>
+
+</view>

@@ -1,0 +1,383 @@
+<!--profile.wxml-->
+<view class="container">
+  <!-- 简历展示 -->
+  <view wx:if="{{showPage === 'resume'}}">
+
+    <!-- 基本信息展示 -->
+    <view class="resume-item first-resume-item">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">基本信息</text>
+        <text class="color-red">*</text>
+        <image class="img-icon" bindtap="editorBasic" src="/asset/iconfont/edit.png"></image>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!name}}">
+        <text class="color-red">请编辑</text>
+      </view>
+      <view class="resume-item-content" wx:if="{{name}}">
+        <view class="title">{{name}}</view>
+        <view>{{gender}} {{birthday}}</view>
+        <view>家庭所在地：{{homeCity[0]}}-{{homeCity[1]}}-{{homeCity[2]}}</view>
+        <view>当前所在地：{{currentCity[0]}}-{{currentCity[1]}}-{{currentCity[2]}}</view>
+        <view>电话号码：{{mobile}}</view>
+        <view>邮箱：{{email}}</view>
+      </view>
+    </view>
+
+    <!-- 教育信息展示  -->
+    <view class="resume-item" id="resumeEdu">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">教育信息</text>
+        <text class="color-red">*</text>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!education.length}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view bindtap="editorEdu" class="resume-item-content edu-item vux-1px-b" wx:for="{{education}}" wx:if="{{resumeData.education}}" id="{{index}}">
+        <view class="arrow-right">
+          <view>
+            {{item.school}}
+            <text>|</text> {{item.major}}
+            <text>|</text> {{item.degree}}
+            <text>|</text> {{item.rank}}
+          </view>
+          <view>
+            {{item.start_date}}至{{item.end_date}}
+          </view>
+        </view>
+      </view>
+      <view class="resume-add-btn" bindtap="editorEdu">
+        <text bindtap="editorEdu"><text>+</text>添加教育信息</text>
+      </view>
+    </view>
+
+    <!-- 实习经历展示 -->
+    <view class="resume-item" id="resumeWork">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">实习经历</text>
+        <text class="color-red">*</text>
+        <image class="img-icon" src="/asset/iconfont/edit.png" bindtap="editorWork"></image>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!work}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view class="resume-item-content" wx:if="{{work}}">
+        <pre class="resume-pre">{{work}}</pre>
+      </view>
+    </view>
+
+    <!-- 项目经验展示 -->
+    <view class="resume-item" id="resumePractices">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">项目经验</text>
+        <text class="color-red">*</text>
+        <image class="img-icon" src="/asset/iconfont/edit.png" bindtap="editorPractice"></image>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!practices}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view class="resume-item-content" wx:if="{{practices}}">
+        <pre class="resume-pre">{{practices}}</pre>
+      </view>
+    </view>
+
+    <!-- 社团经历展示 -->
+    <view class="resume-item" id="resumeClub">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">社团经历</text>
+        <image class="img-icon" src="/asset/iconfont/edit.png" bindtap="editorClub"></image>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!club}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view class="resume-item-content" wx:if="{{club}}">
+        <pre class="resume-pre">{{club}}</pre>
+      </view>
+    </view>
+
+    <!-- 获奖荣誉展示 -->
+    <view class="resume-item" id="resumeClub">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">获奖荣誉</text>
+        <image class="img-icon" src="/asset/iconfont/edit.png" bindtap="editorReward"></image>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!reward}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view class="resume-item-content" wx:if="{{reward}}">
+        <pre class="resume-pre">{{reward}}</pre>
+      </view>
+    </view>
+
+    <!-- 实验室展示 -->
+    <view class="resume-item" id="resumeClub">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">实验室</text>
+        <image class="img-icon" src="/asset/iconfont/edit.png" bindtap="editorLab"></image>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!laboratory}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view class="resume-item-content" wx:if="{{laboratory}}">
+        <pre class="resume-pre">{{laboratory}}</pre>
+      </view>
+    </view>
+
+    <!-- 语言等级展示 -->
+    <view class="resume-item" id="resumeLanguage">
+      <view class="resume-item-title vux-1px-b">
+        <text class="title">语言等级</text>
+        <text class="color-red">*</text>
+      </view>
+      <view class="pleaseEdit" wx:if="{{!language.length}}">
+        <view class="color-red">请编辑</view>
+      </view>
+      <view class="resume-item-content edu-item vux-1px-b" wx:for="{{language}}" bindtap="editorLanguage" id="{{index}}" wx:if="{{language}}">
+        <view class="arrow-right">
+          <view>{{item.type}}</view>
+          <view>
+            <text>{{item.level}}</text>{{item.score}}
+          </view>
+        </view>
+      </view>
+      <view class="resume-add-btn">
+        <text bindtap="editorLanguage"><text>+</text>添加语言等级</text>
+      </view>
+    </view>
+
+
+
+
+  </view>
+  <!-- 简历编辑 -->
+  <!-- 基本信息编辑 -->
+  <view class="resume-basic" wx:if="{{showPage==='basic'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="edit-item">
+          <text class="edit-text">真实姓名</text>
+          <input class="edit-input" placeholder="请输入真实姓名" value="{{name}}" bindblur="nameBlur" placeholder-class="picker-holder" />
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">手机号码</text>
+          <input class="edit-input" placeholder="请输入手机号码" value="{{mobile}}" bindblur="mobileBlur" type="number" maxlength="11" placeholder-class="picker-holder" />
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">邮箱</text>
+          <input class="edit-input" placeholder="请输入常用邮箱" value="{{email}}" bindblur="emailBlur" placeholder-class="picker-holder" />
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">性别</text>
+          <radio-group bindchange="genderChange">
+            <label class="radio"><radio value="男" checked="{{male}}" color="#049cff" /><text wx:if="{{!male}}" class="picker-holder">男</text><text wx:if="{{male}}">男</text></label>
+            <label><radio value="女" checked="{{female}}" color="#049cff" /><text wx:if="{{!female}}" class="picker-holder">女</text><text wx:if="{{female}}">女</text></label>
+          </radio-group>
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">出生日期</text>
+          <picker class="picker-component" mode="date" bindchange="birthdayChange" value="{{birthday}}">
+            <view class="picker-holder" wx:if="{{!birthday}}">
+              请输入出生日期
+            </view>
+            <view class="picker">
+              {{birthday}}
+            </view>
+          </picker>
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">家庭所在地</text>
+          <picker class="picker-component" mode="region" bindchange="homeCityChange" value="{{homeCity}}">
+            <view class="picker-holder" wx:if="{{!homeCity.length}}">
+              请选择家庭所在地
+            </view>
+            <view class="picker" wx:if="{{homeCity.length}}">
+              {{homeCity[0]}}-{{homeCity[1]}}-{{homeCity[2]}}
+            </view>
+          </picker>
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">当前所在地</text>
+          <picker class="picker-component" mode="region" bindchange="currentCityChange" value="{{currentCity}}">
+            <view class="picker-holder" wx:if="{{!currentCity.length}}">
+              请选择目前所在城市
+            </view>
+            <view class="picker" wx:if="{{currentCity.length}}">
+              {{currentCity[0]}}-{{currentCity[1]}}-{{currentCity[2]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveBasic">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 教育信息编辑 -->
+  <view class="resume-edu" wx:if="{{showPage==='education'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="edit-item">
+          <text class="edit-text">学校名称</text>
+          <input class="edit-input" placeholder="请输入学校名称" value="{{school}}" bindblur="schoolBlur" placeholder-class="picker-holder" />
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">所学专业</text>
+          <input class="edit-input" placeholder="请输入所学专业" value="{{major}}" bindblur="majorBlur" placeholder-class="picker-holder" />
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">学历</text>
+          <picker bindchange="degreeChange" value="{{index}}" range="{{degreeArray}}" class="picker-component">
+            <view class="picker-holder" wx:if="{{!degree}}">
+              选择学历
+            </view>
+            <view class="picker" wx:if="{{degree}}">
+              {{degree}}
+            </view>
+          </picker>
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">入学时间</text>
+          <picker class="picker-component" mode="date" bindchange="startChange" value="{{start_date}}">
+            <view class="picker-holder" wx:if="{{!start_date}}">
+              请选择入学时间
+            </view>
+            <view class="picker">
+              {{start_date}}
+            </view>
+          </picker>
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">毕业时间</text>
+          <picker class="picker-component" mode="date" bindchange="endChange" value="{{end_date}}">
+            <view class="picker-holder" wx:if="{{!end_date}}">
+              请选择毕业时间
+            </view>
+            <view class="picker">
+              {{end_date}}
+            </view>
+          </picker>
+        </view>
+        <view class="edit-item">
+          <text class="edit-text">专业排名</text>
+          <picker bindchange="majorOrderChange" value="{{index}}" range="{{majorOrderArray}}" class="picker-component">
+            <view class="picker-holder" wx:if="{{!majorOrder}}">
+              选择专业排名
+            </view>
+            <view class="picker" wx:if="{{majorOrder}}">
+              {{majorOrder}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveEdu">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 实习经历编辑 -->
+  <view id="resumeWork" class="resume-work" wx:if="{{showPage==='work'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="resume-textarea">
+          <textarea class="textarea" value="{{work}}" maxlength="2000" bindinput="calWorkNum" bindblur="workChange" placeholder="例：2016年3月，进入阿里巴巴集团担任三个月的产品实习生职位，主要负责淘宝网用户端的用户消费行为分析和商品营销专题策划工作；若没有实习经历可填“无”；" />
+          <text class="count-text">{{workCount}}/2000</text>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveWork">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 项目经验编辑 -->
+  <view id="resumeProject" class="resume-project" wx:if="{{showPage==='practices'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="resume-textarea">
+          <textarea class="textarea" value="{{practices}}" maxlength="2000" bindinput="calPracticeNum" bindblur="practiceChange" placeholder="例：2016年6月，加入我校大学生在线教育平台项目，同时担任半年的产品设计一职，主要负责用户需求调研以及网站的原型设计工作，最后该项目按时上线并一直运行至今；若没有项目经验可填“无”；" />
+          <text class="count-text">{{practiceCount}}/2000</text>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="savePractice">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 社团经历编辑 -->
+  <view id="resumeProject" class="resume-project" wx:if="{{showPage==='club'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="resume-textarea">
+          <textarea class="textarea" value="{{club}}" maxlength="2000" bindinput="calclubNum" bindblur="clubChange" placeholder="例：2015年，担任经济与管理学院学生会宣传部部长，主要负责社团活动的对外宣传以及海报设计的制作。若没有社团经历可填“无”；" />
+          <text class="count-text">{{clubCount}}/2000</text>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveClub">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 获奖荣誉编辑 -->
+  <view id="resumeProject" class="resume-project" wx:if="{{showPage==='reward'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="resume-textarea">
+          <textarea class="textarea" value="{{reward}}" maxlength="2000" bindinput="calrewardNum" bindblur="rewardChange" placeholder="例：2015年10月荣获校级一等奖学金；2016年11月荣获全国挑战杯大赛省级一等奖；若没有获奖荣誉可填“无”；" />
+          <text class="count-text">{{rewardCount}}/2000</text>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveReward">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 实验室编辑 -->
+  <view id="resumeProject" class="resume-project" wx:if="{{showPage==='laboratory'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view class="resume-textarea">
+          <textarea class="textarea" value="{{laboratory}}" maxlength="2000" bindinput="callabNum" bindblur="labChange" placeholder="例：2016年9月，进去清华大学“智能信息技术实验室”，期间主要负责参与了人工智能和机器学习相关学术研究。" />
+          <text class="count-text">{{laboratoryCount}}/2000</text>
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveLab">保存</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 语言等级编辑 -->
+  <view class="resume-skill" wx:if="{{showPage==='language'}}">
+    <view class="resume-detail-content">
+      <view class="resume-detail-view">
+        <view>
+          <view class="skill-title">
+            <text class="title-mark">语言证书</text>
+          </view>
+          <view class="edit-item">
+            <text class="edit-text">语言等级</text>
+            <picker class="picker-component" mode="multiSelector" bindchange="languageChange" bindcolumnchange="columnChange" value="{{end_date}}" range="{{languageArray}}">
+              <view class="picker-holder" wx:if="{{!language.length}}">
+                选择语言等级
+              </view>
+              <view class="picker" wx:if="{{language.length}}">
+                {{end_date}}
+              </view>
+            </picker>
+          </view>
+
+          <!-- <popup-picker title="语言等级" :data="list" v-model="value3" :columns="2" placeholder="选择语言等级" value-text-align="left"></popup-picker> -->
+        </view>
+      </view>
+      <view class="saveBtn-box">
+        <button class="saveBtn" bindtap="saveLanguage">保存</button>
+      </view>
+    </view>
+  </view>
+
+
+</view>

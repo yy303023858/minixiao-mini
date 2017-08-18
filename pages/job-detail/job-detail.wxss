@@ -1,0 +1,159 @@
+/* job-detail.wxss */
+
+.icon_info, .icon_right {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.icon_collection {
+  float: right;
+  padding-top: 32rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.icon_info {
+  padding-right: 4rpx;
+  vertical-align: middle;
+}
+
+.info_text {
+  padding-right: 10rpx;
+}
+
+.content_view {
+  padding: 0 32rpx 20rpx;
+  background-color: #fff;
+  font-weight: normal;
+  border-bottom: 10px solid #eee;
+}
+
+.title {
+  height: 90rpx;
+  padding-top: 30rpx;
+  line-height: 90rpx;
+  font-weight: normal;
+  font-size: 36rpx;
+}
+
+.salary {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: #fd4545;
+}
+
+.info {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color: #8f8f8f;
+}
+
+.job_end {
+  padding-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.company_wrapper {
+  padding: 32rpx 32rpx;
+  background-color: #fff;
+  border-bottom: 10px solid #eee;
+}
+
+.company_box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img_wrapper {
+  flex: 0 0 160rpx;
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #d9d9d9;
+}
+
+.img {
+  display: block;
+  width: 156rpx;
+  height: 156rpx;
+}
+
+.company_info {
+  flex-shrink: 1;
+  flex-grow: 1;
+  overflow: hidden;
+  color: #999;
+}
+
+.company_name {
+  display: block;
+  max-width: 100%;
+  padding-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 32rpx;
+  color: #464646;
+}
+
+.company_category, .company_size {
+  display: block;
+  padding-bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+.company_size {
+  padding-bottom: 0;
+}
+
+.job_info {
+  background-color: #fff;
+}
+
+.icon-right {
+  flex-shrink: 0;
+}
+
+.job_box {
+  padding: 0 32rpx 40rpx;
+}
+
+.job_title {
+  padding: 36rpx 0;
+}
+
+.job_text {
+  display: inline-block;
+  padding-left: 20rpx;
+  font-size: 36rpx;
+  border-left: 3px #049cff solid;
+  font-weight: normal;
+}
+
+.job_des {
+  display: block;
+  padding-bottom: 58rpx;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.apply_btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 100rpx;
+  z-index: 11;
+  height: 100rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 39rpx;
+  background-color: rgba(4, 156, 255, 1);
+}

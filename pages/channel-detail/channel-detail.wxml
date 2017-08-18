@@ -1,0 +1,76 @@
+<!--channel-detail.wxml-->
+<view class="container">
+  <view class="main_view">
+    <view class="main_box">
+      <view class="img_wrapper">
+        <image class="img" mode="widthFix" src="http://www.minixiao.com/st/images/activity/201608/fb27248b4ec94ebbb907ec10142c94e6.jpg"></image>
+      </view>
+
+      <text class="channel_title">搜狗 Geek Day</text>
+      <text class="channel_des">CEO与你面对面，技术大牛排排坐，师兄师姐当面聊，当场面试效率高，美食车票全都包，互动体验嗨到爆！</text>
+
+      <view class="info">
+        <view class="info_item">
+          <image class="icon" src="/asset/iconfont/time.png"></image>
+          <text class="info_item_text">2016-09-27 13:00 ~ 18:00</text>
+        </view>
+        <view class="info_item">
+          <image class="icon" src="/asset/iconfont/address.png"></image>
+          <text class="info_item_text">北京，具体地点审核通过后另行通知</text>
+        </view>
+        <view class="info_item">
+          <image class="icon" src="/asset/iconfont/user-small.png"></image>
+          <text class="info_item_text">名额不限</text>
+        </view>
+        <view class="info_item">
+          <image class="icon" src="/asset/iconfont/building.png"></image>
+          <text class="info_item_text">搜狗</text>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="channel_content">
+      <text class="content_title">活动详情</text>
+      <div class="content">
+        <pre>
+            每一段人生，都有梦想的奠基
+            每一个生命，都有专属的超极英雄
+            每一天都在期待你的出现，期待一个智慧，热情，能力超群的你
+            期待，你就是我要找的超极英雄
+            “搜寻下一个超极英雄”&nbsp;搜狗2017校园招聘悄然来袭！&nbsp;
+            你就是我心中的超极英雄~&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            我们打破常规，以最快的脚步来到你身旁，只为给你展示最好的明天！
+            <strong>搜狗</strong><strong>Geek Day</strong><strong>！</strong>
+            <strong>史无前例的校招福利！</strong>
+            我们已倾尽所有，只为迎来最优秀的你！
+            &nbsp;
+            <strong>搜狗</strong><strong>Geek Day</strong><strong>这里有：</strong>
+            <strong>CEO</strong><strong>与你面对面：</strong>CEO站台！了解搜狗？没有更好的机会了！
+            <strong>技术大牛排排坐：</strong>技术大牛站台！搜狗CTO、首席架构师、产品技术负责人全部出席！
+            <strong>师兄师姐当面聊：</strong>求职路上，找个靠谱的师兄或师姐好好聊！
+            <strong>当场面试效率高：</strong>现场直接面试，最快途径拿offer！就为最“极客”的你！
+            <strong>美食车票全都包：</strong>精美茶点，路费报销，最贴心的福利！
+            <strong>互动体验嗨到爆：</strong>公司参观，学长交流，更快了解搜狗！
+            &nbsp;
+            <strong>搜狗</strong><strong>Geek Day流程：</strong>
+            13:00—13:40：签到＆参观
+            13:40—15:10：高管分享
+            15:10—15:55：交流＆茶歇
+            15:55—16:00：面试讲解
+            16:00—18:00：面试
+            &nbsp;
+            <strong>如果你是：</strong>
+            超级学霸&nbsp; 项目能手&nbsp; 实习标兵&nbsp; 研究达人&nbsp; 竞赛精英
+            快来报名参加搜狗Geek Day活动！
+            &nbsp;
+            <strong>活动安排：</strong>
+            <strong>时间：</strong>9月27日
+            <strong>地点：</strong>具体地点审核通过后另行通知
+            &nbsp;
+      </pre>
+      </div>
+    </view>
+  </view>
+</view>

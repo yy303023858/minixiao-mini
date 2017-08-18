@@ -1,0 +1,57 @@
+<!--applylog.wxml-->
+<view class="container">
+  <view class="tab_wrapper">
+    <view class="tab_item" bindtap="changeTab" data-id="0">
+      <text class="tab_text tab_active{{currentIndex == 0}}">全部</text>
+    </view>
+    <view class="tab_item" bindtap="changeTab" data-id="1">
+      <text class="tab_text tab_active{{currentIndex == 1}}">待处理</text>
+    </view>
+    <view class="tab_item" bindtap="changeTab" data-id="2">
+      <text class="tab_text tab_active{{currentIndex == 2}}">处理中</text>
+    </view>
+    <view class="tab_item" bindtap="changeTab" data-id="3">
+      <text class="tab_text tab_active{{currentIndex == 3}}">offer</text>
+    </view>
+    <view class="tab_item" bindtap="changeTab" data-id="4">
+      <text class="tab_text tab_active{{currentIndex == 4}}">不合适</text>
+    </view>
+  </view>
+
+  <swiper class="swiper" bindchange="swiperChange" current="{{currentIndex}}">
+    <swiper-item>
+      <scroll-view class="scroll_view" scroll-y="true">
+        <view class="job_wrapper" wx:for="{{applyData}}" wx:key="index">
+          <view class="job_box">
+            <view class="logo">
+              <image class="logo_img" src="{{item.logo}}"></image>
+            </view>
+            <view class="info">
+              <text class="info_job">{{item.name}}</text>
+              <text class="info_job">{{item.company}}</text>
+              <text class="info_job">{{item.salary}}</text>
+            </view>
+            <text class="state">{{item.state}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view class="scroll_view" scroll-y="true">
+        <view class="job_wrapper" wx:for="{{applyData}}" wx:key="index">
+          <view class="job_box">
+            <view class="logo">
+              <image class="logo_img" src="{{item.logo}}"></image>
+            </view>
+            <view class="info">
+              <text class="info_job">{{item.name}}</text>
+              <text class="info_job">{{item.company}}</text>
+              <text class="info_job">{{item.salary}}</text>
+            </view>
+            <text class="state">{{item.state}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,16 @@
+<!--channel.wxml-->
+<view class="container">
+  <view class="channel_view_wrapper">
+    <view class="channel_view">
+      <view class="card" wx:for="{{channelList}}" wx:key="index" id="{{item.id}}" bindtap="goDetail">
+        <view class="img_wrapper">
+          <image mode="widthFix" class="img" src="{{item.picUrl}}"></image>
+        </view>
+        <view class="card_title">
+          <text class="card_text">{{item.name}}</text>
+          <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

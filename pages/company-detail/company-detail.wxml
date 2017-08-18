@@ -1,0 +1,84 @@
+<!--company-detail.wxml-->
+<view class="container">
+  <view class="main_view">
+    <view class="view_padding">
+      <view class="company_info">
+        <view class="img_wrapper vux-1px">
+          <image class="img" src="{{recInfo.logo}}"></image>
+        </view>
+        <view class="info_content">
+          <view class="title">{{recInfo.fullName}}</view>
+          <view class="category">{{recInfo.primaryIndustry}}</view>
+          <view class="sub_info">
+            <text>{{recInfo.nature}}</text>
+            <text> | </text>
+            <text>{{recInfo.size}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="email" wx:if="{{recInfo.website}}">
+        <image class="icon_img" src="/asset/iconfont/IE.png"></image>
+        <text>{{recInfo.website}}</text>
+      </view>
+      <view class="address" wx:if="{{recInfo.detailAddress}}">
+        <image class="icon_img" src="/asset/iconfont/location.png"></image>
+        <text>{{recInfo.detailAddress}}</text>
+      </view>
+      <view class="tag">
+        <view class="tag_item" wx:for="{{recTags}}" wx:key="{{index}}"><text class="tag_text">{{item}}</text></view>
+      </view>
+    </view>
+
+    <view class="tab_wrapper">
+      <view class="tab_item vux-1px-r" bindtap="changeTab" id="0">
+        <text class="tab_text tab_active{{currentIndex == 0}}">公司介绍</text>
+      </view>
+      <view class="tab_item" bindtap="changeTab" id="1">
+        <text class="tab_text tab_active{{currentIndex == 1}}">热招职位{{jobCount}}个</text>
+      </view>
+    </view>
+
+    <view class="view_padding" wx:if="{{currentIndex === 0}}">
+      <view class="company_box">
+        <pre class="company_des">{{recInfo.description}}</pre>
+      </view>
+    </view>
+
+    <view class="jobs_wrapper" wx:if="{{currentIndex === 1}}">
+      <view class="job_type vux-1px-b">
+        <text class="job_type_title">职位类型：</text>
+        <view class="job_type_wrapper">
+          <view class="job_type_box">
+            <text bindtap="selType" class="job_type_item {{typeIndex === index ? 'seledType': ''}}" wx:for="{{jobType}}" wx:key="{{index}}" id="{{index}}">{{item.text}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="job_content vux-1px-b">
+        <view class="job_list">
+          <view class="job_item vux-1px-b" wx:for="{{jobList}}" wx:key="{{index}}">
+            <view class="job_item_box">
+              <view class="job_title_wrapper">
+                <text class="job_title">{{item.jobName}}</text>
+                <text class="salary">{{item.salary}}</text>
+              </view>
+              <view class="send_time">网申：{{item.expiryStartDate}}-{{item.expiryEndDate}}</view>
+              <view>
+                <image class="icon_img" mode="aspectFit" src="/asset/iconfont/location.png"></image>
+                <text class="job_address">{{item.city}}</text>
+                <text> | </text>
+                <image class="icon_img" mode="aspectFit" src="/asset/iconfont/university.png"></image>
+                <text class="job_degree">{{item.degree}}</text>
+              </view>
+            </view>
+            <image class="right_img" src="/asset/iconfont/right.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- <load-more :tip="loadTip" :show-loading="showLoading"></load-more> -->
+    </view>
+
+
+  </view>
+</view>

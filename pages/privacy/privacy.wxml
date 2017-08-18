@@ -1,0 +1,16 @@
+<!--privacy.wxml-->
+<view class="container">
+  <text class="privacy_title">屏蔽企业</text>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view class="radio_item">
+      <label class="radio">
+      <radio class="radio_icon" value="所有公司都能看到我" color="#049cff"/>所有公司都能看到我
+      </label>
+    </view>
+    <view class="radio_item">
+      <label class="radio">
+      <radio class="radio_icon" value="只有投递才能看到我的简历" color="#049cff"/>只有投递才能看到我的简历
+      </label>
+    </view>
+  </radio-group>
+</view>

@@ -1,0 +1,22 @@
+/* attachment.wxss */
+
+.attach_wrapper {
+  position: absolute;
+  top: 46px;
+  bottom: 100px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img{
+  width: 200rpx;
+  height: 200rpx;
+}
+.attach_name {
+  font-size: 19px;
+  color: #333;
+}

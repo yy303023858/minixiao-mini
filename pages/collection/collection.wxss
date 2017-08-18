@@ -1,0 +1,76 @@
+/* collection.wxss */
+.job_wrapper {
+  padding: 20rpx 20rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.job_wrapper div:first-child {
+  width: 100%;
+}
+
+.job_box {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  flex: 0 0 140rpx;
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 20rpx;
+  border: 1rpx solid #d9d9d9;
+}
+
+.logo_img {
+  display: block;
+  width: 138rpx;
+  height: 138rpx;
+}
+
+.info {
+  display: flex;
+  height: 132rpx;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 1;
+  flex-grow: 1;
+  font-size: 28rpx;
+  overflow: hidden;
+  color: #999;
+}
+
+.info_job {
+  font-size: 32rpx;
+  font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #464646;
+}
+
+.info_name {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #666;
+}
+
+.salary {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #f23023;
+}
+
+.state {
+  padding-left: 20rpx;
+  flex-shrink: 0;
+  color: #049cff;
+}

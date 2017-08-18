@@ -1,0 +1,45 @@
+<!--selcity.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="header_box">
+      <icon type="search" class="search_icon" color="#fff" size="14" />
+      <!-- <text class="header_title">搜索城市</text> -->
+      <input class="header_title" placeholder="搜索城市" placeholder-class="input_holder"/>
+    </view>
+  </view>
+  <scroll-view class="scrollView" scroll-y scroll-into-view="{{toView}}">
+    <view class="hot_wrapper" id="hot">
+      <text class="title">热门城市</text>
+      <view class="hot_list">
+        <view class="hot_item"><text class="hot_item_text">北京</text></view>
+        <view class="hot_item"><text class="hot_item_text">上海</text></view>
+        <view class="hot_item"><text class="hot_item_text">广州</text></view>
+        <view class="hot_item"><text class="hot_item_text">深圳</text></view>
+        <view class="hot_item"><text class="hot_item_text">成都</text></view>
+        <view class="hot_item"><text class="hot_item_text">杭州</text></view>
+        <view class="hot_item"><text class="hot_item_text">武汉</text></view>
+        <view class="hot_item"><text class="hot_item_text">西安</text></view>
+        <view class="hot_item"><text class="hot_item_text">南京</text></view>
+        <view class="hot_item"><text class="hot_item_text">厦门</text></view>
+        <view class="hot_item"><text class="hot_item_text">长沙</text></view>
+      </view>
+    </view>
+    <view class="option_box">
+      <view wx:for="{{addressRadio}}" wx:key="index" id="{{item.name}}">
+        <text class="title">{{item.name}}</text>
+        <view wx:for="{{item.list}}" wx:key="index" class="city_wrapper" bindtap="selCity" id="{{item}}">
+          <text class="city_item">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="letter_wrapper">
+    <view class="letter_box" bindtap="goView" id="hot">
+      <text class="letter">热门</text>
+    </view>
+    <view wx:for="{{addressRadio}}" wx:key="index" class="letter_box" bindtap="goView" id="{{item.name}}">
+      <text class="letter">{{item.name}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+<!--job-detail.wxml-->
+<view class="container">
+  <view class="main_view">
+    <view>
+      <view class="content_view">
+        <view class="title_wrapper">
+          <text class="title">{{job.title}}</text>
+          <image class="icon_collection" mode="aspectFit" src="/asset/iconfont/collection.png"></image>
+        </view>
+        <text class="salary">{{job.salary}}</text>
+        <view class="info">
+          <image class="icon_info" mode="scaleToFill" src="/asset/iconfont/location.png"></image>
+          <text class="info_text">{{job.jobArea}}</text>
+          <image class="icon_info" mode="scaleToFill" src="/asset/iconfont/university.png"></image>
+          <text class="info_text">{{job.careerLevel}}</text>
+          <image class="icon_info" mode="scaleToFill" src="/asset/iconfont/people.png"></image>
+          <text class="info_text">{{job.headcount}}</text>
+        </view>
+        <text class="job_end">网申时间：{{job.applyBeginDate}}-{{job.applyEndDate}}</text>
+      </view>
+
+      <view class="company_wrapper">
+        <view class="company_box" bindtap="showCompany">
+          <view class="img_wrapper">
+            <image class="img" mode="aspectFit" src="{{job.logo}}"></image>
+          </view>
+          <view class="company_info">
+            <text class="company_name">{{job.fullName}}</text>
+            <text class="company_category">{{job.primaryIndustry}}</text>
+            <text class="company_size">{{job.nature}} | {{job.size}}</text>
+          </view>
+          <image class="icon_right" mode="aspectFit" src="/asset/iconfont/right.png"></image>
+        </view>
+      </view>
+
+      <view class="job_info">
+        <view class="job_box">
+          <view class="job_title">
+            <text class="job_text">职位描述</text>
+          </view>
+          <pre class="job_des">
+            <import src="/wxParse/wxParse.wxml" />
+          <template is="wxParse" data="{{wxParseData:description.nodes}}" />
+           </pre>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="apply_btn">申请该职位</view>
+</view>

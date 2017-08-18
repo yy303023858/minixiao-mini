@@ -1,0 +1,85 @@
+/* sign-up.wxss */
+
+.sign_up_item {
+  position: relative;
+  height: 48rpx;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.primary_text {
+  color: #049cff;
+}
+
+.inline_block {
+  display: inline-block;
+  line-height: 46rpx;
+}
+
+.register_tip {
+  padding: 40rpx 30rpx;
+  text-align: right;
+  color: #555;
+  font-size: 28rpx;
+}
+
+.verify_btn {
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+}
+
+.radio_box {
+  float: left;
+}
+
+.sign_up_btn_box {
+  padding: 100rpx 30rpx 0;
+}
+
+.sign_up_btn {
+  display: block;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #049cff;
+}
+
+.tip_cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.tip_wrapper {
+  width: 580rpx;
+  height: 800rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.tip_title {
+  text-align: center;
+  padding: 8rpx 0;
+  font-size: 32rpx;
+  color: #333;
+}
+.tip_content{
+  height: 726rpx;
+  padding: 8rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #777;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre-wrap;
+  word-break: break-all;
+}

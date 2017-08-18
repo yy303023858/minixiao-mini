@@ -1,0 +1,50 @@
+<!--login.wxml-->
+<view class="container">
+  <view class="tab_wrapper">
+    <view class="tab_item" bindtap="changeTab" data-id="0">
+      <text class="tab_text {{currentIndex == 0 ? 'tab_active' : ''}}">验证码登录</text>
+    </view>
+    <view class="tab_item" bindtap="changeTab" data-id="1">
+      <text class="tab_text {{currentIndex == 1 ? 'tab_active' : ''}}">密码登录</text>
+    </view>
+  </view>
+
+  <view class="login_box" wx:if="{{currentIndex == 0}}">
+    <form bindsubmit="formSubmit">
+      <view class="login_item">
+        <input placeholder="请输入手机号或邮箱" confirm-type="next" name="username"/>
+      </view>
+      <view class="login_item">
+        <input placeholder="请输入验证码" maxlength="6" name="verifycode"/>
+        <text class="primary_text verify_btn">获取验证码</text>
+      </view>
+      <view class="register_tip">
+        还没有账号？快来
+        <navigator class="primary_text inline_block" url="/pages/sign-up/sign-up">注册</navigator>
+      </view>
+      <view class="login_btn_box">
+        <button class="login_btn" formType="submit">登录</button>
+      </view>
+    </form>
+  </view>
+
+  <view class="login_box" wx:if="{{currentIndex == 1}}">
+    <form bindsubmit="formSubmit">
+      <view class="login_item">
+        <input placeholder="请输入手机号或邮箱" confirm-type="next" name="username"/>
+      </view>
+      <view class="login_item">
+        <input placeholder="请输入密码" password name="password"/>
+      </view>
+      <view class="register_tip">
+        <text class="forget_pwd primary_text">忘记密码？</text> 还没有账号？快来
+        <navigator class="primary_text inline_block" url="/pages/sign-up/sign-up">注册</navigator>
+      </view>
+      <view class="login_btn_box">
+        <button class="login_btn" formType="submit">登录</button>
+      </view>
+    </form>
+  </view>
+
+
+</view>

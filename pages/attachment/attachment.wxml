@@ -1,0 +1,7 @@
+<!--attachment.wxml-->
+<view class="container">
+  <view class="attach_wrapper">
+     <image class="img" src="/asset/iconfont/file.png"></image> 
+    <text class="attach_name">求职简历.doc</text>
+  </view>
+</view>

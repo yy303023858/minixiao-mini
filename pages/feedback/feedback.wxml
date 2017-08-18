@@ -1,0 +1,10 @@
+<!--feedback.wxml-->
+<view class="container">
+  <form bindsubmit="bindFormSubmit" class="textarea_wrapper">
+    <textarea placeholder="" name="feedback" class="textarea" maxlength="2000" bindinput="calNum" />
+    <text class="count_text">{{count}}/2000</text>
+  </form>
+  <view class="login_btn_box">
+    <button class="login_btn" formType="submit">提交反馈</button>
+  </view>
+</view>

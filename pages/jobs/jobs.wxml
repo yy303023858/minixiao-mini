@@ -1,0 +1,86 @@
+<!--jobs.wxml-->
+<view class="container">
+  <!-- header -->
+  <view class="header">
+    <view class="header_box" bindtap="search">
+      <icon type="search" color="#fff" size="14" class="icon_img"/>
+      <text class="header_title">{{searchTip}}</text>
+    </view>
+  </view>
+  <!-- filter -->
+  <view class="filter_wrapper">
+    <view class="filter_item" bindtap="funShowOption" id="0">
+      <text class="filter_text">地区</text>
+      <image class="down_img" src="/asset/iconfont/down.png"></image>
+    </view>
+    <view class="filter_item" bindtap="funShowOption" id="1">
+      <text class="filter_text">薪资</text>
+      <image class="down_img" src="/asset/iconfont/down.png"></image>
+    </view>
+    <view class="filter_item" bindtap="funShowOption" id="2">
+      <text class="filter_text">学历</text>
+      <image class="down_img" src="/asset/iconfont/down.png"></image>
+    </view>
+    <view class="filter_item" bindtap="funShowOption" id="3">
+      <text class="filter_text">排序</text>
+      <image class="down_img" src="/asset/iconfont/down.png"></image>
+    </view>
+  </view>
+
+  <!-- filter-option -->
+  <view class="option city_option" animation="{{showCity}}">
+    <view class="option_box">
+      <scroll-view scroll-y class="option_scroll" scroll-into-view="{{toView}}" scroll-with-animation>
+        <view wx:for="{{addressRadio}}" wx:key="index" id="{{item.name}}">
+          <text class="title">{{item.name}}</text>
+          <view wx:for="{{item.list}}" wx:key="index" class="city_wrapper" id="{{item}}">
+            <text class="option_item" bindtap="addressChange" id="{{item}}">{{item}}</text>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="letter_list">
+        <text class="letter_item" wx:for="{{addressRadio}}" wx:key="index" id="{{item.name}}" bindtap="goView">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="option salary_option" animation="{{showSalary}}">
+    <text wx:for="{{salaryArray}}" wx:key="{{index}}" class="option_item" bindtap="salaryChange" id="{{item.key}}">{{item.value}}</text>
+  </view>
+  <view class="option degree_option" animation="{{showDegree}}">
+    <text wx:for="{{degreeArray}}" wx:key="{{index}}" class="option_item" bindtap="degreeChange" id="{{item.key}}">{{item.value}}</text>
+  </view>
+  <view class="option order_option" animation="{{showOrder}}">
+    <text wx:for="{{orderArray}}" wx:key="{{index}}" class="option_item" bindtap="orderChange" id="{{item.key}}">{{item.value}}</text>
+  </view>
+
+  <view class="option_cover" wx:if="{{showCover}}" bindtap="cancelOption"></view>
+
+  <!-- joblist -->
+  <view class="job_view">
+    <view class="job_wrapper" wx:for="{{jobList}}" wx:key="index" bindtap="goDetail" id="{{item.posId}}">
+      <view class="job_box">
+        <view class="logo">
+          <image class="logo_img" src="{{item.img}}" mode="aspectFit"></image>
+        </view>
+        <view class="info">
+          <text class="info_job">{{item.pname}}</text>
+          <text class="info_name">{{item.name}}</text>
+          <view class="sub_info">
+            <image class="icon_img" src="/asset/iconfont/location.png"></image>
+            <text>{{item.city}}</text>
+            <image class="icon_img" src="/asset/iconfont/university.png"></image>
+            <text>{{item.degree}}</text>
+          </view>
+          <text class="send_time">网申：{{item.expiryStartDate}}-{{item.expiryEndDate}}</text>
+        </view>
+        <text class="salary">{{item.salary}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="loading_view">
+    <text class="load_img" wx:if="{{showLoading}}"></text>
+    <text class="load_text">{{loadTip}}</text>
+  </view>
+</view>

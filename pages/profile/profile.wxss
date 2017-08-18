@@ -1,0 +1,259 @@
+/* profile.wxss */
+
+/* 统一样式 */
+
+.img-icon {
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  padding: 10rpx 0 10rpx 10rpx;
+}
+
+.vux-1px-b {
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.edit-item {
+  display: flex;
+  height: 48rpx;
+  padding: 20rpx 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.edit-text {
+  display: inline-block;
+  width: 200rpx;
+  line-height: 48rpx;
+}
+
+.edit-input {
+  flex-grow: 1;
+  height: 48rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.picker {
+  line-height: 48rpx;
+  color: #333;
+}
+
+.picker-holder {
+  line-height: 48rpx;
+  color: #b5b5b5;
+}
+
+.picker-component {
+  flex-grow: 1;
+}
+
+.radio {
+  margin-right: 20rpx;
+}
+
+.resume-pre {
+  white-space: pre-wrap;
+}
+
+/* 简历样式 */
+
+.resume-item {
+  background-color: #fff;
+  padding: 20rpx 30rpx 8rpx;
+  border-bottom: 20rpx solid #f5f5f5;
+}
+
+.resume-item-title .title {
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #464646;
+  font-weight: bold;
+}
+
+.pleaseEdit .color-red {
+  padding: 16rpx 0;
+}
+
+.resume-item-content .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #464646;
+}
+
+.completeBtn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.resume-detail-view {
+  background-color: #fff;
+}
+
+.saveBtn-box {
+  padding: 0 40rpx;
+}
+
+.resume-textarea {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.count-text {
+  display: block;
+  font-size: 34rpx;
+  text-align: right;
+  color: #b2b2b2;
+}
+
+.textarea-counter {
+  padding: 0 20px;
+}
+
+.resume-add-btn {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.mint-cell-value {
+  padding-left: 4px;
+  font-size: 14px;
+  color: #555 !important;
+}
+
+.saveBtn {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-top: 60rpx;
+  background-color: #049cff;
+  font-size: 32rpx;
+  border: none;
+  color: #fff;
+}
+
+.delBtn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.resume-add-btn a {
+  text-decoration: none;
+  color: #464646;
+}
+
+.resume-add-btn span {
+  font-size: 16px;
+  color: #26a2ff;
+}
+
+.editor-btn {
+  padding: 16px 0px 10px 10px;
+  font-size: 15px;
+  line-height: 15px;
+  float: right;
+  text-decoration: none;
+  color: #049cff;
+}
+
+.color-red {
+  color: red;
+  font-size: 28rpx;
+  font-weight: normal;
+}
+
+#mobile-neitui-resume {
+  margin-bottom: 51px;
+  background-color: #f5f5f5;
+}
+
+.resume-item-content {
+  position: relative;
+  padding: 16rpx 0;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.resume-item-content h4 {
+  margin: 6px 0;
+  width: 67px;
+  height: 24px;
+  line-height: 24px;
+  background-color: #f90;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+.resume-item-content span {
+  padding: 0 4px;
+}
+
+.resume-item-content p {
+  line-height: 20px;
+}
+
+.edu-item {
+  position: relative;
+}
+
+.textarea {
+  width: 100%;
+  height: 200px;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.arrow-right:after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 5px;
+  height: 5px;
+  border: 2px solid #c8c8cd;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  content: " ";
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.beforeNecessary .mint-cell-title:before {
+  position: absolute;
+  top: 14px;
+  left: -8px;
+  content: '*';
+  color: #f23023;
+}
+
+/* // 基本信息页  */
+
+/* 教育信息页
+技能信息页  */
+
+.skill-title {
+  padding-top: 32rpx;
+  padding: 32rpx 30rpx 20rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #464646;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.skill-title .title-mark {
+  padding-left: 10rpx;
+  border-left: 4px solid #049cff;
+}
